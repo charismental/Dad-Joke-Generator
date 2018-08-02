@@ -29,7 +29,7 @@
           <button class="btn btn-success btn-lg" v-if="buttonsDisplayed == 3 || buttonsDisplayed == 4" @click="nextJoke">Next Joke</button>
           <button class="btn btn-primary btn-lg" @click="getJoke">New Joke</button>
         </div>
-        <div class="col-md-6 offset-md-3 text-center mt-2 px-0" v-if="newJoke != ''"><button class="btn btn-danger reset btn-lg" @click="reset">Reset</button></div>
+        <div class="col-md-6 offset-md-3 text-center mt-2 px-0"><button class="btn btn-danger reset btn-lg" :class="{'btn-inv': buttonsDisplayed == 0, 'btn-vis': buttonsDisplayed > 0}" @click="reset">Reset</button></div>
       </div>
     </div>
   </div>

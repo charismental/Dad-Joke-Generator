@@ -1,69 +1,65 @@
 .fade {
-  transition: all 0.5s;
+	transition: all 0.5s;
 }
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-  transform: scale(0);
+.fade-enter, .fade-leave-to {
+	opacity: 0;
+	transform: scale(0);
 }
-
 .btn0 {
-  top: -150px;
-  > button {
-    width: 100%;
-    height: 250%;
-  }
+	top: -150px;
+	> button {
+		width: 100%;
+		height: 250%;
+		transition: all 0.7s ease-out;
+	}
 }
-
 .btn1 {
-  top: 0px;
-  transition: all 0.7s ease-out;
-  > button {
-    height: 100%;
-    width: 100%;
-    transition: all 0.7s ease-out;
-  }
+	top: 0px;
+	transition: all 0.7s ease-out;
+	> button {
+		height: 100%;
+		width: 100%;
+		transition: all 0.7s ease-out;
+	}
 }
-
-.btn2 > button,
-.btn3 > button {
-  height: 100%;
-  width: 49%;
+.btn2 > button, .btn3 > button {
+	height: 100%;
+	width: 49%;
 }
-
 .btn4 > button {
-  width: 31.3%;
-  height: 100%;
+	width: 31.3%;
+	height: 100%;
 }
-
 .fade-enter-to {
-  opacity: 1;
-  transform: scale(1);
+	opacity: 1;
+	transform: scale(1);
 }
-
 .fade-move {
-  opacity: 1;
-  transition: all 0.5s;
+	opacity: 1;
+	transition: all 0.5s;
 }
-
 .snazzy {
-  top: -100px;
-  height: 250px;
-  opacity: 0;
+	top: -100px;
+	height: 250px;
+	opacity: 0;
 }
-
 .snazzier {
-  top: 0px;
-  opacity: 1;
-  transition: all 0.7s ease-out;
+	top: 0px;
+	opacity: 1;
+	transition: all 0.7s ease-out;
 }
-
 .reset {
-  width: 100%;
+	width: 100%;
+	transition: all 0.7s ease-out;
 }
-
 .btn:focus {
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+.btn-inv {
+	opacity: 0;
+}
+.btn-vis {
+	opacity: 1;
+	transition: all 1.7s ease-out;
 }
