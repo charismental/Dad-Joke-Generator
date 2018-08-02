@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dad Joke Generator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|Concert+One|Karla|Old+Standard+TT|Oswald|Poppins|Rakkas|Ubuntu+Mono|Yatra+One">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <div id="app">
+        <div class="container mt-3">
+          <div class="row">
+            <transition name="fade">
+              <div class="card col-md-6 offset-md-3 snazzy px-0" :class="{snazzier: newJoke !=''}">
+                  <div class="card-header">
+                    <h4 class="card-title text-center">Dad Jokes</h4>
+                  </div>
+                <div class="card-body">
+                  <blockquote class="blockquote text-center" :style="`font-family:${displayedFont};color:${displayedColor}`">{{ newJoke }}
+                  </blockquote>
+                </div>
+              </div>
+            </transition>
+            <div class="col-md-6 offset-md-3 text-center mt-2 d-flex justify-content-between px-0" :class="{btn0: buttonsDisplayed == 0, btn1: buttonsDisplayed == 1, btn2: buttonsDisplayed == 2, btn3: buttonsDisplayed == 3, btn4: buttonsDisplayed == 4 }">
+              <button class="btn btn-secondary btn-lg" v-if="buttonsDisplayed == 2 || buttonsDisplayed == 4" @click="lastJoke">Last Joke</button>
+              <button class="btn btn-success btn-lg" v-if="buttonsDisplayed == 3 || buttonsDisplayed == 4" @click="nextJoke">Next Joke</button>
+              <button class="btn btn-primary btn-lg" @click="getJoke">New Joke</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
