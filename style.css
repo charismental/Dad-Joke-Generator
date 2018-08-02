@@ -2,7 +2,8 @@
   transition: all 0.5s;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
   transform: scale(0);
 }
@@ -25,9 +26,10 @@
   transition: all 0.7s ease-out;
 }
 
-.btn2 > button, .btn3 > button {
+.btn2 > button,
+.btn3 > button {
   height: 100%;
-  width: 48%;
+  width: 49%;
 }
 
 .btn4 > button {
@@ -55,4 +57,13 @@
   top: 0px;
   opacity: 1;
   transition: all 0.7s ease-out;
+}
+
+.reset {
+  width: 100%;
+}
+
+.btn:focus {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
 }

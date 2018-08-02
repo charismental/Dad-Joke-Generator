@@ -10,28 +10,29 @@
     <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <div id="app">
-        <div class="container mt-3">
-          <div class="row">
-            <transition name="fade">
-              <div class="card col-md-6 offset-md-3 snazzy px-0" :class="{snazzier: newJoke !=''}">
-                  <div class="card-header">
-                    <h4 class="card-title text-center">Dad Jokes</h4>
-                  </div>
-                <div class="card-body">
-                  <blockquote class="blockquote text-center" :style="`font-family:${displayedFont};color:${displayedColor}`">{{ newJoke }}
-                  </blockquote>
-                </div>
-              </div>
-            </transition>
-            <div class="col-md-6 offset-md-3 text-center mt-2 d-flex justify-content-between px-0" :class="{btn0: buttonsDisplayed == 0, btn1: buttonsDisplayed == 1, btn2: buttonsDisplayed == 2, btn3: buttonsDisplayed == 3, btn4: buttonsDisplayed == 4 }">
-              <button class="btn btn-secondary btn-lg" v-if="buttonsDisplayed == 2 || buttonsDisplayed == 4" @click="lastJoke">Last Joke</button>
-              <button class="btn btn-success btn-lg" v-if="buttonsDisplayed == 3 || buttonsDisplayed == 4" @click="nextJoke">Next Joke</button>
-              <button class="btn btn-primary btn-lg" @click="getJoke">New Joke</button>
+  <div id="app">
+    <div class="container mt-3">
+      <div class="row">
+        <transition name="fade">
+          <div class="card col-md-6 offset-md-3 snazzy px-0" :class="{snazzier: newJoke !=''}">
+            <div class="card-header">
+              <h4 class="card-title text-center">Dad Jokes</h4>
+            </div>
+            <div class="card-body">
+              <blockquote class="blockquote text-center" :style="`font-family:${displayedFont};color:${displayedColor}`">{{ newJoke }}
+              </blockquote>
             </div>
           </div>
+        </transition>
+        <div class="col-md-6 offset-md-3 text-center mt-2 d-flex justify-content-between px-0" :class="{btn0: buttonsDisplayed == 0, btn1: buttonsDisplayed == 1, btn2: buttonsDisplayed == 2, btn3: buttonsDisplayed == 3, btn4: buttonsDisplayed == 4 }">
+          <button class="btn btn-secondary btn-lg" v-if="buttonsDisplayed == 2 || buttonsDisplayed == 4" @click="lastJoke">Last Joke</button>
+          <button class="btn btn-success btn-lg" v-if="buttonsDisplayed == 3 || buttonsDisplayed == 4" @click="nextJoke">Next Joke</button>
+          <button class="btn btn-primary btn-lg" @click="getJoke">New Joke</button>
         </div>
+        <div class="col-md-6 offset-md-3 text-center mt-2 px-0" v-if="newJoke != ''"><button class="btn btn-danger reset btn-lg" @click="reset">Reset</button></div>
+      </div>
     </div>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
     <script src="script.js"></script>
